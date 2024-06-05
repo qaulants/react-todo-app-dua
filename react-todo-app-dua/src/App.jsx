@@ -5,7 +5,7 @@ import viteLogo from '/vite.svg'
 //import './App.css'
 
 const App = () =>{
-  const [todos, seTodos] = useState([
+  const [todos, setTodos] = useState([
     {
       id: 1,
       title: 'Finish Progate React Course',
@@ -24,11 +24,21 @@ const App = () =>{
   ])
 
   //console.log(todos)
-
+ const toggleCompleted = (todoId) => {
+    //console.log(todoId);
+    const updatedTodos = todos.map((todo) =>{
+      if(todo.id === todoId){
+        todo.completed = !todo.completed
+     //   console.log('true')
+      }
+      return todo
+    })
+    setTodos(updatedTodos)
+  }
   return(
     <div style={styles.container}>
       <h1 style={styles.title}>My Todo List</h1>
-      <Todos todos={todos} />
+      <Todos todos={todos} toggleCompleted={toggleCompleted} />
     </div>
   );
 
