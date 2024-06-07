@@ -30,7 +30,9 @@ const TodoItem = ({ todo }) => {
 
 const styles = {
   todoItem: {
-    border: '2px solid #f4f4f4',
+    border: '1px solid #BDBDBD',
+    borderRadius: '8px',
+    marginBottom: '10px',
     fontSize: '24px',
     display: 'flex',
     justifyContent: 'space-between',
